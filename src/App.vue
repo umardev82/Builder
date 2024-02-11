@@ -6,11 +6,11 @@
     </svg>
   </button>
 
-  <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 border-aside" aria-label="Sidebar">
+  <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-[234px] opacity-[30%] h-screen transition-transform -translate-x-full sm:translate-x-0 border-aside" aria-label="Sidebar">
     <div class="h-full px-3 py-4 overflow-y-auto bg-[#151419]">
-      <a href="https://flowbite.com/" class="flex items-center ps-2.5 mb-5">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" />
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+      <a href="https://flowbite.com/" class="flex ps-2.5 mb-5 justify-center">
+<!--        <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" />-->
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Melina</span>
       </a>
       <ul class="space-y-2 font-medium">
         <li class="flex justify-start pl-5 bg-[#1B1C21] rounded-[10px] font-[13.87px] leading-[20.81px] w-[180px] h-[54px]">
@@ -40,7 +40,7 @@
       <ul class="space-y-2 font-medium bottom-10 fixed w-[200px] ml-auto">
         <li class="flex justify-center bg-[#1B1C21] rounded-[10px] font-[13.87px] leading-[20.81px] w-[180px] h-[54px]">
           <a class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-             href="#">
+             href="javascript:void(0)" v-on:click="closeWindow()">
             <svg
                 aria-hidden="true"
                 class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -58,7 +58,7 @@
 
 
   <div class="p-4 sm:ml-64 bg-[#151419]">
-    <div class="p-4 dark:border-gray-700 mt-14">
+    <div class="p-4 dark:border-gray-700">
       <div class="flex mb-6 rounded-lg justify-between">
         <div
             class="w-[476.91px] h-[193.01px] flex items-center justify-center rounded-[25.86px] bg-[#1B1C21]">
@@ -156,7 +156,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
   components: {},
@@ -199,6 +198,9 @@ export default {
       console.log('Delete item:', this.items[this.selectedIndex]);
       this.items.splice(this.selectedIndex, 1); // Remove the selected item
       this.menuVisible = false;
+    },
+    closeWindow() {
+      window.close()
     }
   }
 }
